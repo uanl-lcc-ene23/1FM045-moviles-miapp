@@ -68,3 +68,13 @@ button {
 .negritas {
     /**/
 }
+
+#calcularBTN {
+    background: purple;
+    color: white;
+    border-radius: 20px;
+}
+
+.fila {
+    margin: 10px 0;
+}
