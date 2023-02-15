@@ -1,22 +1,3 @@
-//Variables
-//variable de texto
-var saludo = "hola, mundo"; // o let
-
-//variable numerica
-var x = 5;
-var y = 20;
-var z = x + y;
-
-//variable con objetos
-var verde = document.getElementById("verde");
-var cajas = document.querySelector(".cajas");
-
-var boton = document.querySelector("#verde button");
-
-console.log(boton);
-//variable con Arreglo ? 
-var arreglo = [1, 2, 3, 4]
-
 //funcion
 function cerrarCaja(caja){
     var cajaAEliminar = document.querySelector("#" + caja);
