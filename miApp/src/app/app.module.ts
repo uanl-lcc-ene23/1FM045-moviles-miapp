@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { FormularioTicketComponent } from './formulario-ticket/formulario-ticket.component';
 import { TicketCompraComponent } from './ticket-compra/ticket-compra.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TicketCompraComponent } from './ticket-compra/ticket-compra.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule, 
     IonicModule, IonicModule.forRoot()
   ],

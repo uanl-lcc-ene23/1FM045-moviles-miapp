@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-formulario-ticket',
@@ -13,13 +13,18 @@ export class FormularioTicketComponent implements OnInit {
   }
   
   total: number = 0;
+  monto: number = 0;
+  articulo: string = "";
+
+  @Output() mensaje: string = "";
   
   agregarAticket(): void{
     console.log("Ups!");
   }
   
   presentaAlerta() {
-    alert("Alerta aqui")
+    this.mensaje = "hola, mundo";
+    alert(this.mensaje);
   }
   
 }

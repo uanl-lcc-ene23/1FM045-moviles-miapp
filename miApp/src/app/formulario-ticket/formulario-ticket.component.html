@@ -7,7 +7,7 @@
                     <ion-label>Articulo</ion-label>
                 </ion-col>
                 <ion-col size-md="10" size="12">
-                    <ion-input placeholder="Ejemplo: Libro" id="articulo"></ion-input>
+                    <ion-input placeholder="Ejemplo: Libro" id="articulo" [(ngModel)]="articulo"></ion-input>
                 </ion-col>
             </ion-row>
             
@@ -16,13 +16,13 @@
                     <ion-label>Precio:</ion-label>
                 </ion-col>
                 <ion-col size="12" size-md="10" >
-                    <ion-input id="precio" type="number" placeholder="Ejemplo: $50"></ion-input>
+                    <ion-input id="precio" type="number" placeholder="Ejemplo: $50" [(ngModel)]="monto"></ion-input>
                 </ion-col>
             </ion-row>
             
             <ion-row>
                 <ion-col size="12">
-                    <ion-button (click)="agregarAticket()">Calcular total</ion-button>
+                    <ion-button (click)="agregarAticket()" >Calcular total</ion-button>
                     
                 </ion-col>
                 <ion-col size="12">
@@ -32,4 +32,4 @@
         </ion-col>
     </ion-row>
 </ion-grid>
-
+<app-ticket-compra [mensaje]="mensaje"></app-ticket-compra>
