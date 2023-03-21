@@ -1,0 +1,18 @@
+<h2>Ticket de Compra</h2>
+
+<div class="fila">
+    <label>Articulo:</label>
+    <ion-input placeholder="Ejemplo: Libro" id="articulo"></ion-input>
+</div>
+
+
+<div class="fila">
+    <label>Precio:</label>
+    <ion-input id="precio" type="number" placeholder="Ejemplo: $50"></ion-input>
+</div>
+
+
+<div class="botones">
+    <ion-button (click)="agregarAticket()">Calcular total</ion-button>
+    <ion-button (click)="presentaAlerta()">Ver Alerta</ion-button>
+</div>

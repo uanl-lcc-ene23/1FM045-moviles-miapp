@@ -1,34 +1,13 @@
-<div id="ticket">
-  <h2>Ticket de Compra</h2>
+<ion-app>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                <ion-label>Mi primera App de Ionic</ion-label>
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
 
-  <div class="fila">
-      <label>Articulo:</label>
-      <input placeholder="Ejemplo: Libro" id="articulo"/>
-  </div>
-
- 
- <div class="fila">
-  <label>Precio:</label>
-  <input id="precio" type="number" placeholder="Ejemplo: $50"/>
- </div>
-
- 
-
-  <!--<button id="calcularBTN" onclick="agregarAticket()">Calcular Total</button>
--->
-
-<ion-button onclick="agregarAticket()">Calcular total</ion-button>
-<button onclick="presentaAlerta()">Ver Alerta</button>
-
-  <div id="ticketCompra">
-      <p>========TU TICKET DE COMPRA=======</p>
-      <!--Lista de Ticket aquí-->
-     
-      <p id="total">Total: $</p>
-  </div>
-</div>
-
-
-<div id="contenido">
-  <!--Contenido aqui-->
-</div>
+        <app-formulario-ticket></app-formulario-ticket>
+    </ion-content>
+</ion-app>
