@@ -12,6 +12,7 @@ export class TicketCompraComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  @Input()  mensaje: string = "";
+  @Input()  mensaje: string = " ";
+  @Input() total: number = 0;
 
 }

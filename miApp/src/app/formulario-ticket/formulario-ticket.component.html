@@ -1,7 +1,7 @@
 <ion-grid>
-    <ion-row>
+    <ion-row> 
         <ion-col offset-md="2" size-md="8" size="12">
-            <h2>Ticket de Compra</h2>
+            <h2>Ticket de Compra - {{ mensaje}}</h2>
             <ion-row>
                 <ion-col size-md="2" size="11">
                     <ion-label>Articulo</ion-label>
@@ -25,12 +25,10 @@
                     <ion-button (click)="agregarAticket()" >Calcular total</ion-button>
                     
                 </ion-col>
-                <ion-col size="12">
-                    <ion-button (click)="presentaAlerta()">Ver Alerta</ion-button>
-                </ion-col>
+                
             </ion-row>
         </ion-col>
     </ion-row>
 </ion-grid>
 
-<app-ticket-compra [mensaje]="mensaje"></app-ticket-compra>
+<app-ticket-compra [mensaje]="mensaje" [total]="total"></app-ticket-compra>
