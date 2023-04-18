@@ -16,12 +16,16 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 //importar firebaseconfig
 import {environment} from '../environments/environment.prod';
+import { ComprasComponent } from './compras/compras.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioTicketComponent,
-    TicketCompraComponent
+    TicketCompraComponent,
+    ComprasComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,

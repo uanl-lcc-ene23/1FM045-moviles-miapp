@@ -8,6 +8,12 @@
     </ion-header>
     <ion-content>
 
-        <app-formulario-ticket></app-formulario-ticket>
+        
+       <!-- <ion-button [routerLink]="'/ticket'">Ticket</ion-button>
+        <ion-button [routerLink]="'/compras'">Compras</ion-button>-->
+        <app-tabs></app-tabs>
+        <router-outlet></router-outlet><!--importante localizar aquí-->
+
+        
     </ion-content>
 </ion-app>
