@@ -12,17 +12,13 @@ export class FormularioTicketComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  @Output() total: number = 0;
-  monto: number = 0;
-  articulo: string = "";
+  
+  @Output() monto: number = 0;
 
-  @Output() mensaje: string = "HOLA,MUNDO";
+  @Output() descripcion: string = "";
+
   
-  agregarAticket(): void{
-   //Calcular Total aqui
-  }
-  
-  presentaAlerta() {
+  agregarAticket() {
    
   }
   

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-ticket-compra',
@@ -10,9 +10,25 @@ export class TicketCompraComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   
   }
+
+  ngOnChanges() {
+    console.log("cambio");
+  }
+
+ 
   
-  @Input()  mensaje: string = " ";
-  @Input() total: number = 0;
+  @Input() descripcion: string = ""; 
+  @Input() monto: number= 0;
+
+  total: number = 0;
+
+
+  articulos: any = [];
+
+  calculaTotal(){
+  
+  }
 
 }
