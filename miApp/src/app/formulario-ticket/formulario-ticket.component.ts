@@ -13,13 +13,29 @@ export class FormularioTicketComponent implements OnInit {
   }
   
   
-  @Output() monto: number = 0;
+  monto: number = 0;
 
-  @Output() descripcion: string = "";
+  descripcion: string = "";
+
+  @Output() nuevaCompra: any = {
+    monto: 0,
+    descripcion: ''
+  }
 
   
   agregarAticket() {
+   this.nuevaCompra = {
+    monto: this.monto,
+    descripcion: this.descripcion
+   }
+
+   this.limpiaCamposTexto();
    
   }
+
+  limpiaCamposTexto(){
+    this.monto = 0;
+    this.descripcion = '';
+   }
   
 }

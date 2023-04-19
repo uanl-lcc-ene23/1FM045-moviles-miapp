@@ -14,21 +14,30 @@ export class TicketCompraComponent implements OnInit {
   }
 
   ngOnChanges() {
-    console.log("cambio");
+    this.agregaAticket(this.nuevaCompra);
   }
 
  
   
-  @Input() descripcion: string = ""; 
-  @Input() monto: number= 0;
+
+  @Input() nuevaCompra: any = {
+    monto: 0,
+    descripcion: ''
+  }
 
   total: number = 0;
 
 
   articulos: any = [];
 
-  calculaTotal(){
-  
+  agregaAticket(compra: any){
+    this.articulos.push(compra);
+
+    this.calculaTotal(compra.monto);
+  }
+
+  calculaTotal(monto: number){
+    this.total = this.total + monto;
   }
 
 }
