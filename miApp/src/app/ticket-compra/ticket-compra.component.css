@@ -1,0 +1,19 @@
+#ticketCompra li > div {
+    display: flex;
+    flex-flow: row;
+}
+#ticketCompra li > div> span {
+    flex: 1 0 50%;
+}
+#ticketCompra  li > div >span:first-of-type {
+    text-transform: capitalize;
+}
+#ticketCompra  li > div >span:last-of-type {
+    text-align: right;
+    font-weight: 700;
+}
+
+ion-card-title{
+    padding: 20px;
+    text-align: center;
+}

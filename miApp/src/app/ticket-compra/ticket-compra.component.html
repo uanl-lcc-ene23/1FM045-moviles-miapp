@@ -1,24 +1,31 @@
 <ion-grid>
   <ion-row>
-    <ion-col size-md="6" offset-md="4" size="12">
+    <ion-col size-md="4" offset-md="4" size="12">
       
       
-      <div id="ticketCompra">
-        <p>========TU TICKET DE COMPRA=======</p>
-        <ul>
-          <div *ngFor="let articulo of articulos">
-            <li *ngIf="articulo.monto !== 0 && articulo.descripcion !== ''">
-              <div>
-                <span>{{articulo.descripcion}}</span>
-                <span>{{articulo.monto}}</span>
-              </div>
-            </li>  
-          </div>
+     <ion-card>
+      <ion-card-title>
+       <ion-label>** Tu ticket de compra **</ion-label>
+      </ion-card-title>
+      <ion-card-content>
+        <div id="ticketCompra">
+         
+          <ul>
+            <div *ngFor="let articulo of articulos">
+              <li *ngIf="articulo.monto !== 0 && articulo.descripcion !== ''">
+                <div>
+                  <span>{{articulo.descripcion}}</span>
+                  <span>${{articulo.monto}}</span>
+                </div>
+              </li>  
+            </div>
+            
+          </ul>
           
-        </ul>
-        
-        <p id="total">Total: ${{total}}</p>
-      </div>
+          <p id="total">Total: ${{total}}</p>
+        </div>
+      </ion-card-content>
+     </ion-card>
     </ion-col>
   </ion-row>
 </ion-grid>

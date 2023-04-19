@@ -17,8 +17,6 @@ export class TicketCompraComponent implements OnInit {
     this.agregaAticket(this.nuevaCompra);
   }
 
- 
-  
 
   @Input() nuevaCompra: any = {
     monto: 0,
@@ -32,7 +30,7 @@ export class TicketCompraComponent implements OnInit {
 
   agregaAticket(compra: any){
     this.articulos.push(compra);
-
+    
     this.calculaTotal(compra.monto);
   }
 
