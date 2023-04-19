@@ -1,7 +1,10 @@
 body {
     font-family : sans-serif;
+    
 }
-
+ion-app{
+    --ion-background-color: #ffc8dd;
+}
 h5 {
     font-size: 20px;
     margin: 0;
