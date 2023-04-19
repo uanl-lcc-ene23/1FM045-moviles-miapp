@@ -9,3 +9,11 @@
         min-width: 300px;
     }
 }
+
+ion-input {
+    width: 80%;
+}
+
+.centrar-texto-vertical {
+    line-height: 40px;
+}
