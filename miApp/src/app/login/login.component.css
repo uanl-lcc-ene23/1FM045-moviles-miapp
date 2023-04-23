@@ -2,7 +2,7 @@ ion-header {
     text-align: center;
 }
 ion-header ion-toolbar ion-title {
-    background-color: transparent;
+    background-color: var(--ion-background-color);
     color: var(--ion-color-primary);
 }
 

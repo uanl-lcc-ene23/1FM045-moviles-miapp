@@ -4,6 +4,7 @@ import { Auth, authState , user, User} from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthServiceService } from '../auth-service.service';
 
 
 @Component({
@@ -13,8 +14,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class LoginComponent implements OnInit {
   
-  
-  
   private auth: Auth = inject(Auth);
   usuario$ =  user(this.auth); 
   authState$ = authState(this.auth);
@@ -22,18 +21,8 @@ export class LoginComponent implements OnInit {
   authStateSubscription : Subscription;
 
   constructor(private rutaActiva: ActivatedRoute, 
-    public afs: AngularFirestore, 
-    public afa: AngularFireAuth, 
-    public ruta: Router) {
-    
-    this.authStateSubscription = this.authState$.subscribe((aUser: User | null) => {
-      //handle auth state changes here. Note, that user will be null if there is no currently logged in user.
-   console.log(aUser, "usuario");
-  });
-  
-  this.userSubscription = this.usuario$.subscribe((aUser: User | null) =>{
-    console.log(aUser);
-  });
+    public afs: AngularFirestore,
+    public authS: AuthServiceService) {
     
   }
   ngOnInit(): void {
@@ -55,18 +44,7 @@ export class LoginComponent implements OnInit {
   error: string;
 
   iniciarSesion(email: string, password: string){
-    return this.afa.signInWithEmailAndPassword(email,password)
-    .then((result)=> {
-      console.log(result);
-      this.afa.authState.subscribe((user) => {
-        if (user) {
-          this.ruta.navigate(['perfil']);
-        }
-      });
-    })
-    .catch((error)=> {
-      this.error = error.message
-    })
+    this.authS.iniciarSesion(email, password);
   }
   
   esRegistro(){
@@ -80,17 +58,6 @@ export class LoginComponent implements OnInit {
       return;
     }
   }
-
-  ngOnChanges(){
-    console.log("cambios");
-  }
-
-  ngOnDestroy(){
-    console.log("me destruiste");
-  }
-
-  
-
   siguientePaso(nuevoPaso : number){
     this.paso = nuevoPaso;
   }
