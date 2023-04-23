@@ -1,0 +1,17 @@
+#actualizaFotoGrid {
+    text-align: center;
+}
+
+#botones {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#botones ion-button {
+    display: block;
+}
+
+ion-icon {
+    color: var(--blanco);
+    font-size: 30px;
+}

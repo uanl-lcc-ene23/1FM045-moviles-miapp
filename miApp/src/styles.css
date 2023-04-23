@@ -102,11 +102,26 @@ ion-button.gris {
     font-size: 16px;
 }
 
-p, h1, h2, h3, h4, ul, ul li{
+ion-button.transparente {
+    --background: transparent;
+    --background-hover: var(--negro);
+    --background-activated: var(--negro);
+    --background-focused: var(--blanco);
+    --color: var(--blanco);
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+
+p, h1, h2, h3, h4, ul, ul li, span{
     color: var(--blanco)
 }
 
-p.verde, h1.verde, h2.verde, h3.verde, h4.verde, ul.verde, ul li.verde {
+p.verde, h1.verde, h2.verde, h3.verde, h4.verde, ul.verde, ul li.verde , span.verde{
     color: var(--verde);
 }
 

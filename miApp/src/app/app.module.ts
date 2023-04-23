@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { LibreriaComponent } from './libreria/libreria.component';
+import { CambiarFotoComponent } from './cambiar-foto/cambiar-foto.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LibreriaComponent } from './libreria/libreria.component';
     LoginComponent,
     PerfilComponent,
     BuscarComponent,
-    LibreriaComponent
+    LibreriaComponent,
+    CambiarFotoComponent
   ],
   imports: [
     BrowserModule,

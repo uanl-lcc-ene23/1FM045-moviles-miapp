@@ -8,7 +8,7 @@
                             <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="" routerLink="perfil" width="50px" height="50px">
                         </ion-avatar>
                         <div>
-                            <ion-button class="gris">
+                            <ion-button class="gris" id="cambiarFotoBtn">
                                 Cambiar foto
                             </ion-button>
                         </div>
@@ -56,5 +56,10 @@
                 </ion-grid>
             </ion-col>
         </ion-row>
+        <ion-modal trigger="cambiarFotoBtn">
+           <ng-template>
+            <app-cambiar-foto></app-cambiar-foto>
+           </ng-template>
+        </ion-modal>
     </ion-grid>
 </ion-content>
