@@ -125,6 +125,10 @@ p.verde, h1.verde, h2.verde, h3.verde, h4.verde, ul.verde, ul li.verde , span.ve
     color: var(--verde);
 }
 
+p.gris, h1.gris, h2.gris, h3.gris, h4.gris, ul.gris, ul li.gris , span.gris{
+    color: var(--gris-claro);
+}
+
 
 ion-searchbar, ion-searchbar.blanco {
     --background: var(--blanco);

@@ -1,0 +1,17 @@
+ion-icon {
+    color: var(--negro);
+}
+
+.cancion ion-icon{
+    color: var(--gris-claro);
+}
+
+.cancion .nombre {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blanco);
+}
+
+.cancion.activa .nombre{
+    color: var(--verde);
+}

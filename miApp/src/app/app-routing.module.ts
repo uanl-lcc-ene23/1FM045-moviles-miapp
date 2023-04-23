@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { LibreriaComponent } from './libreria/libreria.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 const routes: Routes = [ //rutas aqui
   {
@@ -42,6 +43,10 @@ const routes: Routes = [ //rutas aqui
     path: 'libreria/perfil', //TEMPORAL : Resolver error de ruta desde libreria
     redirectTo: '/perfil',
     pathMatch: 'full'
+  },
+  {
+    path: 'playlist/:id',
+    component: PlaylistComponent
   },
 ];
 

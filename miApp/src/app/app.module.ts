@@ -24,6 +24,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { LibreriaComponent } from './libreria/libreria.component';
 import { CambiarFotoComponent } from './cambiar-foto/cambiar-foto.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CambiarFotoComponent } from './cambiar-foto/cambiar-foto.component';
     PerfilComponent,
     BuscarComponent,
     LibreriaComponent,
-    CambiarFotoComponent
+    CambiarFotoComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,
