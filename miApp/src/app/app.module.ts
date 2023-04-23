@@ -25,6 +25,7 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { LibreriaComponent } from './libreria/libreria.component';
 import { CambiarFotoComponent } from './cambiar-foto/cambiar-foto.component';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { ResultadosBusquedaComponent } from './resultados-busqueda/resultados-busqueda.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PlaylistComponent } from './playlist/playlist.component';
     BuscarComponent,
     LibreriaComponent,
     CambiarFotoComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    ResultadosBusquedaComponent
   ],
   imports: [
     BrowserModule,

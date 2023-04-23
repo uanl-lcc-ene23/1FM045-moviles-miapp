@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output} from '@angular/core';
 
 @Component({
   selector: 'app-buscar',
@@ -9,7 +9,12 @@ export class BuscarComponent implements OnInit {
 
   constructor() { }
 
+  @Output() resultados: any = [];
+
   ngOnInit(): void {
   }
 
+  buscar(evento: any){
+
+  }
 }

@@ -1,6 +1,6 @@
 <ion-content>
     <h2>Busca</h2>
-    <ion-searchbar class="blanco" placeholder="Buscar"></ion-searchbar>
+    <ion-searchbar class="blanco" placeholder="Buscar" (ionChange)="buscar($event)"></ion-searchbar>
     <div>
         <ion-grid>
             <ion-row>
@@ -52,6 +52,11 @@
                     <ion-card [routerLink]="['/generos', 'pop']">
                         <ion-card-title>Ritmos latinos</ion-card-title>
                     </ion-card>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <app-resultados-busqueda [resultados]="resultados"></app-resultados-busqueda>
                 </ion-col>
             </ion-row>
         </ion-grid>

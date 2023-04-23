@@ -1,0 +1,17 @@
+<ion-grid>
+    <ion-row *ngIf="!resultados.length">
+        <ion-col>
+            <h4 class=" italico">No hay resultados para esta búsqueda</h4>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="resultados.length">
+        <ion-col>
+            <h4>Resultados aqui</h4>
+            <ion-list id="listaResultados">
+                <ion-item>
+                    <ion-label>Nombre resultado</ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+</ion-grid>
