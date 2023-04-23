@@ -29,6 +29,7 @@ import { ResultadosBusquedaComponent } from './resultados-busqueda/resultados-bu
 import { MusicaActivaComponent } from './musica-activa/musica-activa.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     CambiarFotoComponent,
     PlaylistComponent,
     ResultadosBusquedaComponent,
-    MusicaActivaComponent
+    MusicaActivaComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

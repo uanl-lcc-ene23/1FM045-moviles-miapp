@@ -4,31 +4,35 @@
     <div>
         <ion-grid>
             <ion-row>
-                <ion-col>
-                    <p class="italico">Búsquedas recientes</p>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-list>
-                        <ion-item>
-                            <ion-label>FKA twigs</ion-label>
-                        </ion-item>
-                    </ion-list>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <p class="italico">Géneros</p>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col size="6" *ngFor="let genero of generos$ | async">
-                    <ion-card [routerLink]="['/generos', genero.nombre]" class="genero-card">
-                        <ion-card-title>{{genero.nombre}}</ion-card-title>
-                    </ion-card>
-                </ion-col>
-               
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <p class="italico">Búsquedas recientes</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-label>FKA twigs</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <p class="italico">Géneros</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="6" *ngFor="let genero of generos$ | async">
+                            <ion-card [routerLink]="['/generos', genero.nombre]" class="genero-card">
+                                <ion-card-title>{{genero.nombre}}</ion-card-title>
+                            </ion-card>
+                        </ion-col>
+                        
+                    </ion-row>
+                </ion-grid>
             </ion-row>
             <ion-row>
                 <ion-col>
