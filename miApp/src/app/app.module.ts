@@ -26,6 +26,9 @@ import { LibreriaComponent } from './libreria/libreria.component';
 import { CambiarFotoComponent } from './cambiar-foto/cambiar-foto.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { ResultadosBusquedaComponent } from './resultados-busqueda/resultados-busqueda.component';
+import { MusicaActivaComponent } from './musica-activa/musica-activa.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -41,18 +44,18 @@ import { ResultadosBusquedaComponent } from './resultados-busqueda/resultados-bu
     LibreriaComponent,
     CambiarFotoComponent,
     PlaylistComponent,
-    ResultadosBusquedaComponent
+    ResultadosBusquedaComponent,
+    MusicaActivaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule, 
     IonicModule, IonicModule.forRoot(),
-    //provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    //provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebaseConfig)
-    //AngularFireStorageModule,
-    //AngularFireAuthModule
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideFirebaseApp(()=> initializeApp(environment.firebaseConfig)),
+    provideFirestore(()=> getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

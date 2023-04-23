@@ -28,7 +28,7 @@ const routes: Routes = [ //rutas aqui
     component: BuscarComponent
   },
   {
-    path: 'buscar/generos/:genero',
+    path: 'generos/:genero',
     component: BuscarComponent
   },
   {

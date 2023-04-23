@@ -23,36 +23,12 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-                <ion-col size="6">
-                    <ion-card [routerLink]="['/generos', 'pop']">
-                        <ion-card-title>Pop</ion-card-title>
+                <ion-col size="6" *ngFor="let genero of generos$ | async">
+                    <ion-card [routerLink]="['/generos', genero.nombre]" class="genero-card">
+                        <ion-card-title>{{genero.nombre}}</ion-card-title>
                     </ion-card>
                 </ion-col>
-                <ion-col size="6">
-                    <ion-card [routerLink]="['/generos', 'pop']">
-                        <ion-card-title>Indie</ion-card-title>
-                    </ion-card>
-                </ion-col>
-                <ion-col size="6">
-                    <ion-card [routerLink]="['/generos', 'pop']">
-                        <ion-card-title>Reggaetón</ion-card-title>
-                    </ion-card>
-                </ion-col>
-                <ion-col size="6">
-                    <ion-card [routerLink]="['/generos', 'pop']">
-                        <ion-card-title>Rock</ion-card-title>
-                    </ion-card>
-                </ion-col>
-                <ion-col size="6" [routerLink]="['/generos', 'pop']">
-                    <ion-card>
-                        <ion-card-title>Clásica</ion-card-title>
-                    </ion-card>
-                </ion-col>
-                <ion-col size="6">
-                    <ion-card [routerLink]="['/generos', 'pop']">
-                        <ion-card-title>Ritmos latinos</ion-card-title>
-                    </ion-card>
-                </ion-col>
+               
             </ion-row>
             <ion-row>
                 <ion-col>
