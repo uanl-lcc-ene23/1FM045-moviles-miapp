@@ -17,3 +17,21 @@ ion-modal ion-content {
     --padding-start: 20px;
     --padding-end: 20px;
 }
+
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 25px;
+}
+
+.encabezado ion-icon{
+    font-size: 30px;
+}
+
+.encabezado h2 {
+    flex: 1 0 auto;
+    margin-left: 10px;
+}

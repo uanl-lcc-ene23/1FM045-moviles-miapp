@@ -1,0 +1,31 @@
+.avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar ion-avatar {
+    height: 100px;
+    width: 100px;
+}
+
+ion-content > ion-grid:first-of-type {
+    padding: 0;
+}
+ion-content #usuario{
+    background: linear-gradient(#00667B, #002F38,  #101010);
+}
+#datos-usuario ion-col div{
+    text-align: center;
+}
+
+#datos-usuario .titulo{
+    text-transform: uppercase;
+    color: var(--gris-claro);
+    font-weight: 700;
+}
+
+#datos-usuario .valor {
+    font-weight: 700;
+}

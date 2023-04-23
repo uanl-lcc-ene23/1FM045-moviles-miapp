@@ -9,6 +9,7 @@ y no encapsularlos por componente*/
     --verde: #1ED760;
     --bg-color: #121212;
     --gris-oscuro: #777777;
+    --gris-claro: #B3B3B3;
     --blanco: #fff;
     --negro: #000;
 
@@ -78,6 +79,20 @@ ion-button.blanco {
     --background-activated: var(--blanco);
     --background-focused: var(--blanco);
     --color: #000;
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+ion-button.gris {
+    --background: var(--gris-oscuro);
+    --background-hover: var(--negro);
+    --background-activated: var(--negro);
+    --background-focused: var(--blanco);
+    --color: var(--blanco);
     --box-shadow: none;
     text-transform: capitalize;
     --border-radius: 50px;
