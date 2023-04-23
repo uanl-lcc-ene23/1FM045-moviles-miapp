@@ -10,24 +10,29 @@
 
     <form *ngIf="login">
         <ion-grid>
-            <ion-row id="paso1">
+            <ion-row id="paso1" *ngIf="login && paso == 1">
                 <ion-col>
                     <ion-label>¿Cuál es tu correo?</ion-label>
-                    <ion-input type="text"></ion-input>
-                    <ion-button class="verde">Siguiente</ion-button>
+                    <ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>
+                    <ion-button class="verde" (click)="siguientePaso(2)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
-            <ion-row id="paso2">
+            <ion-row id="paso2" *ngIf="login && paso == 2">
                 <ion-col>
                     <div>
-                        <ion-button class="transparente">
+                        <ion-button class="transparente" (click)="regresarPaso(1)">
                             <ion-icon name="chevron-back-sharp"></ion-icon>
                             Volver
                         </ion-button>
                     </div>
                     <ion-label>¿Cuál es tu contraseña?</ion-label>
-                    <ion-input type="password"></ion-input>
-                    <ion-button class="verde" (click)="iniciarSesion()">Iniciar Sesión</ion-button>
+                    <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+                    <ion-button class="verde" (click)="iniciarSesion(usuario, password)">Iniciar Sesión</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="error">
+                <ion-col>
+                    <p class="negritas error">{{error}}</p>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -40,7 +45,7 @@
                 <ion-col>
                     <ion-label>¿Cuál es tu correo?</ion-label>
                     <ion-input type="text"></ion-input>
-                    <ion-button class="verde">Siguiente</ion-button>
+                    <ion-button class="verde" (click)="siguientePaso(2)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
             <ion-row id="paso2">

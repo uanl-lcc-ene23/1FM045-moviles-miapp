@@ -1,7 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Auth, authState , user, User} from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 @Component({
@@ -19,7 +21,10 @@ export class LoginComponent implements OnInit {
   userSubscription: Subscription;
   authStateSubscription : Subscription;
 
-  constructor(private rutaActiva: ActivatedRoute) {
+  constructor(private rutaActiva: ActivatedRoute, 
+    public afs: AngularFirestore, 
+    public afa: AngularFireAuth, 
+    public ruta: Router) {
     
     this.authStateSubscription = this.authState$.subscribe((aUser: User | null) => {
       //handle auth state changes here. Note, that user will be null if there is no currently logged in user.
@@ -34,12 +39,34 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     
     this.esRegistro();
+    this.paso = 1;
   }
+
+
   
   login: boolean = false; 
 
-  iniciarSesion(){
-    
+  usuario: string;
+  password: string;
+
+  modo: string;
+  paso: number;
+
+  error: string;
+
+  iniciarSesion(email: string, password: string){
+    return this.afa.signInWithEmailAndPassword(email,password)
+    .then((result)=> {
+      console.log(result);
+      this.afa.authState.subscribe((user) => {
+        if (user) {
+          this.ruta.navigate(['perfil']);
+        }
+      });
+    })
+    .catch((error)=> {
+      this.error = error.message
+    })
   }
   
   esRegistro(){
@@ -52,5 +79,23 @@ export class LoginComponent implements OnInit {
       this.login = false;
       return;
     }
+  }
+
+  ngOnChanges(){
+    console.log("cambios");
+  }
+
+  ngOnDestroy(){
+    console.log("me destruiste");
+  }
+
+  
+
+  siguientePaso(nuevoPaso : number){
+    this.paso = nuevoPaso;
+  }
+
+  regresarPaso(pasoAnterior: number){
+    this.paso = pasoAnterior;
   }
 }
