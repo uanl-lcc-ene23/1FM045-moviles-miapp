@@ -1,0 +1,86 @@
+<ion-content>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                <ion-label *ngIf="!login">Crear una cuenta</ion-label>
+                <ion-label *ngIf="login">Inicia sesión</ion-label>
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <form *ngIf="login">
+        <ion-grid>
+            <ion-row id="paso1">
+                <ion-col>
+                    <ion-label>¿Cuál es tu correo?</ion-label>
+                    <ion-input type="text"></ion-input>
+                    <ion-button class="verde">Siguiente</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row id="paso2">
+                <ion-col>
+                    <ion-label>¿Cuál es tu contraseña?</ion-label>
+                    <ion-input type="password"></ion-input>
+                    <ion-button class="verde">Siguiente</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+
+
+    <form *ngIf="!login">
+        <ion-grid>
+            <ion-row id="paso1">
+                <ion-col>
+                    <ion-label>¿Cuál es tu correo?</ion-label>
+                    <ion-input type="text"></ion-input>
+                    <ion-button class="verde">Siguiente</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row id="paso2">
+                <ion-col>
+                    <ion-label>Elige tu contraseña</ion-label>
+                    <ion-input type="password"></ion-input>
+                    <ion-button class="verde">Siguiente</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row id="paso3">
+                <ion-col>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <ion-label>¿Cómo te llamas?</ion-label>
+                                <ion-input type="text"></ion-input>
+                            </ion-col>
+            
+                            <div class="divisor"></div>
+                            
+                        </ion-row>
+                        <ion-row>
+                            <div>
+                                <p>Acepta los términos y condiciones</p>
+                                <p class="verde">
+                                    Términos de Uso
+                                </p>
+                                <div>
+                                    <p>Acepto los términos de uso y políticas de privacidad de mi app de música.</p>
+                                    <ion-radio-group value="strawberries">
+                                        <ion-radio value="si" labelPlacement="start">Acepto los términos de uso y políticas de privacidad de mi app de música.</ion-radio><br/>
+                                      </ion-radio-group>
+                                </div>
+                            </div>
+                            
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <div>
+                                    <ion-button class="blanco">Crear cuenta</ion-button>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>

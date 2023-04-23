@@ -1,0 +1,10 @@
+ion-list {
+   /* --ion-background-color: #FFF;*/
+    --ion-text-color: #2d3142;
+
+    --ion-border-color: #2d3142;
+}
+
+.avatar > * {
+    display: inline-block;
+}

@@ -1,0 +1,19 @@
+<ion-content>
+    <div class="encabezado">
+        <img src="" alt="">
+        <h2 class="italico">Tu librería</h2>
+        <ion-icon name="add-outline" id="abrirModal"></ion-icon>
+    </div>
+    
+    <ion-modal trigger="abrirModal">
+        <ng-template>
+            <ion-content>
+                <p class="negritas">Crear una nueva playlist</p>
+                <div>
+                    <ion-input class="blanco" [(ngModel)]="nombrePlaylist"></ion-input>
+                    <ion-button class="verde" (click)="crearPlaylist()">Crear playlist</ion-button>
+                </div>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+</ion-content>

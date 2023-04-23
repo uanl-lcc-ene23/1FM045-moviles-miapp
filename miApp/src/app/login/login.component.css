@@ -1,0 +1,28 @@
+ion-header {
+    text-align: center;
+}
+ion-header ion-toolbar ion-title {
+    background-color: transparent;
+    color: var(--ion-color-primary);
+}
+
+form ion-label {
+    color: #fff;
+    font-weight: 700;
+}
+
+form ion-input {
+    --background: var(--gris-oscuro);
+    --padding-bottom: 15px;
+    --padding-end: 15px;
+    --padding-start: 15px;
+    --padding-top: 15px;
+
+    border-radius: 8px;
+}
+form ion-input .helper {
+    color: #FFF;
+}
+ion-radio-group, ion-radio-group ion-radio {
+    color: #ddd;
+}

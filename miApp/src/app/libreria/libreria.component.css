@@ -1,0 +1,19 @@
+ion-icon {
+    color: var(--blanco);
+}
+
+ion-input.blanco {
+    --background: var(--blanco);
+}
+
+ion-modal {
+    --height: 200px;
+    --border-radius: 20px;
+    text-align: center;
+}
+
+ion-modal ion-content {
+    --padding-top: 20px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+}

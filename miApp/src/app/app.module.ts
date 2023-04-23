@@ -18,6 +18,11 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {environment} from '../environments/environment.prod';
 import { ComprasComponent } from './compras/compras.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { BuscarComponent } from './buscar/buscar.component';
+import { LibreriaComponent } from './libreria/libreria.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { TabsComponent } from './tabs/tabs.component';
     FormularioTicketComponent,
     TicketCompraComponent,
     ComprasComponent,
-    TabsComponent
+    TabsComponent,
+    InicioComponent,
+    LoginComponent,
+    PerfilComponent,
+    BuscarComponent,
+    LibreriaComponent
   ],
   imports: [
     BrowserModule,
