@@ -19,9 +19,15 @@
             </ion-row>
             <ion-row id="paso2">
                 <ion-col>
+                    <div>
+                        <ion-button class="transparente">
+                            <ion-icon name="chevron-back-sharp"></ion-icon>
+                            Volver
+                        </ion-button>
+                    </div>
                     <ion-label>¿Cuál es tu contraseña?</ion-label>
                     <ion-input type="password"></ion-input>
-                    <ion-button class="verde">Siguiente</ion-button>
+                    <ion-button class="verde" (click)="iniciarSesion()">Iniciar Sesión</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>

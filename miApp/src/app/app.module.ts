@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 //Firebase
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
+import { getAuth, provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 
 //importar firebaseconfig
@@ -55,7 +55,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(()=> initializeApp(environment.firebaseConfig)),
-    provideFirestore(()=> getFirestore())
+    provideFirestore(()=> getFirestore()),  //Acceso a Firestore DB
+    provideAuth(()=> getAuth()) //Acceso a Firebase Authentication
   ],
   providers: [],
   bootstrap: [AppComponent]
