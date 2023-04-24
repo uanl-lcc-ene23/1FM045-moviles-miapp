@@ -12,7 +12,8 @@ import { LandingComponent } from './landing/landing.component';
 const routes: Routes = [ //rutas aqui
   {
     path: 'inicio',
-    component: InicioComponent
+    component: InicioComponent, 
+    canActivate: [AuthGuard]
   },
   {
     path: 'cuenta/:login',
@@ -25,7 +26,8 @@ const routes: Routes = [ //rutas aqui
   },
   {
     path: 'buscar',
-    component: BuscarComponent
+    component: BuscarComponent, 
+    canActivate: [AuthGuard]
   },
   
   {
@@ -38,11 +40,13 @@ const routes: Routes = [ //rutas aqui
   },
   {
     path: 'libreria',
-    component: LibreriaComponent
+    component: LibreriaComponent, 
+    canActivate: [AuthGuard]
   },
   {
     path: 'perfil',
-    component: PerfilComponent
+    component: PerfilComponent, 
+    canActivate: [AuthGuard]
   },
   {
     path: 'libreria/perfil', //TEMPORAL : Resolver error de ruta desde libreria
