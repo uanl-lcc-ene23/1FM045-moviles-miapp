@@ -12,7 +12,7 @@ export class AuthServiceService {
     public ruta: Router
   ) { }
 
-  estaLoggeado: boolean;
+  estaLoggeado: boolean = false;
   error: string;
 
   iniciarSesion(email: string, password: string){
@@ -21,13 +21,19 @@ export class AuthServiceService {
       console.log(result);
       this.afa.authState.subscribe((user) => {
         if (user) {
+          console.log(user.uid) // `users/${user.uid}`
           this.estaLoggeado = true;
-          this.ruta.navigate(['perfil']);
+          this.ruta.navigate(['inicio']);
         }
       });
     })
     .catch((error)=> {
+      this.estaLoggeado = false;
       this.error = error.message
     })
+  }
+
+  registro(email: string, password: string, nombre: string ){
+    //return something here
   }
 }

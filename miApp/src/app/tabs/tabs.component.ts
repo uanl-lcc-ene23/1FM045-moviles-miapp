@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck} from '@angular/core';
 import { AuthServiceService } from '../auth-service.service';
 
 @Component({
@@ -12,13 +12,26 @@ export class TabsComponent implements OnInit {
     private sesionIniciada: AuthServiceService
   ) { }
 
-  estaLoggeado: boolean;
+  loggedIn: boolean = false;
   ngOnInit(): void {
-    if(this.sesionIniciada.estaLoggeado){
-      this.estaLoggeado = true;
+     if(this.sesionIniciada.estaLoggeado){
+      this.loggedIn = true;
     }
     if(!this.sesionIniciada.estaLoggeado){
-      this.estaLoggeado = false;
+      this.loggedIn = false;
+    }
+  }
+
+
+  ngDoCheck(){
+    this.validaSesion();
+  }
+
+
+
+  validaSesion(){
+    if(this.sesionIniciada.estaLoggeado){
+      this.loggedIn = true;
     }
   }
 

@@ -1,6 +1,6 @@
 
     <ion-tabs>
-      <ion-tab-bar slot="bottom">
+      <ion-tab-bar slot="bottom" [ngClass]="{'ocultar': !loggedIn }">
         <ion-tab-button tab="inicio" routerLinkActive="highlight">
           <ion-label>Inicio</ion-label>
           <ion-icon name="home-outline"></ion-icon>
