@@ -36,7 +36,8 @@ const routes: Routes = [ //rutas aqui
   },
   {
     path: 'generos/:genero',
-    component: BuscarComponent
+    component: BuscarComponent, 
+    canActivate: [AuthGuard]
   },
   {
     path: 'libreria',
@@ -55,7 +56,8 @@ const routes: Routes = [ //rutas aqui
   },
   {
     path: 'playlist/:id',
-    component: PlaylistComponent
+    component: PlaylistComponent, 
+    canActivate: [AuthGuard]
   },
 ];
 
