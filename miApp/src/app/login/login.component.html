@@ -26,7 +26,7 @@
             <ion-row id="paso1" *ngIf="login && paso == 1">
                 <ion-col>
                     <ion-label>¿Cuál es tu correo?</ion-label>
-                    <ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>
+                    <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
                     <ion-button class="verde" (click)="siguientePaso(2)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
@@ -34,13 +34,13 @@
                 <ion-col>
                     
                     <ion-label>¿Cuál es tu contraseña?</ion-label>
-                    <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+                    <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
                     <ion-button class="verde" (click)="iniciarSesion(usuario, password)">Iniciar Sesión</ion-button>
                 </ion-col>
             </ion-row>
-            <ion-row *ngIf="error">
+            <ion-row *ngIf="mensajeUsuario">
                 <ion-col>
-                    <p class="negritas error">{{error}}</p>
+                    <p class="negritas error">{{mensajeUsuario}}</p>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -52,14 +52,14 @@
             <ion-row id="paso1" *ngIf="!login && paso == 1">
                 <ion-col>
                     <ion-label>¿Cuál es tu correo?</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input type="text" [(ngModel)]="emailNuevoUsuario" name="emailNuevoUsuario" required></ion-input>
                     <ion-button class="verde" (click)="siguientePaso(2)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
             <ion-row id="paso2" *ngIf="!login && paso == 2">
                 <ion-col>
                     <ion-label>Elige tu contraseña</ion-label>
-                    <ion-input type="password"></ion-input>
+                    <ion-input type="password" [(ngModel)]="passwordNuevoUsuario" name="passwordNuevoUsuario" required></ion-input>
                     <ion-button class="verde" (click)="siguientePaso(3)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
@@ -69,7 +69,7 @@
                         <ion-row>
                             <ion-col>
                                 <ion-label>¿Cómo te llamas?</ion-label>
-                                <ion-input type="text"></ion-input>
+                                <ion-input type="text" [(ngModel)]="nombreNuevoUsuario" name="nombreNuevoUsuario" required></ion-input>
                             </ion-col>
                             
                             <div class="divisor"></div>
@@ -83,7 +83,7 @@
                                 </p>
                                 <div class="leyenda">
                                     <p>Acepto los términos de uso y políticas de privacidad de mi app de música.</p>
-                                    <ion-radio-group value="strawberries">
+                                    <ion-radio-group value="strawberries" required>
                                         <ion-radio value="si" labelPlacement="start">Acepto los términos de uso y políticas de privacidad de mi app de música.</ion-radio><br/>
                                     </ion-radio-group>
                                 </div>
@@ -93,11 +93,21 @@
                         <ion-row>
                             <ion-col>
                                 <div>
-                                    <ion-button class="blanco" (click)="crearCuenta()">Crear cuenta</ion-button>
+                                    <ion-button class="blanco" (click)="crearCuenta(emailNuevoUsuario, passwordNuevoUsuario, nombreNuevoUsuario)">Crear cuenta</ion-button>
                                 </div>
                             </ion-col>
                         </ion-row>
                     </ion-grid>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="mensajeUsuario">
+                <ion-col>
+                    <p class="negritas error">{{mensajeUsuario}}</p>
+                    <div>
+                        <ion-button class="transparente" routerLink="landing">
+                            Regresar a login
+                        </ion-button>
+                    </div>
                 </ion-col>
             </ion-row>
         </ion-grid>

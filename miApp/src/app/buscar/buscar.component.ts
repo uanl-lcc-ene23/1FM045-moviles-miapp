@@ -5,6 +5,8 @@ import { Observable, of } from 'rxjs';
 
 import { Genero
  } from '../genero.model';
+import { FirebaseService } from '../firebase.service';
+import { Cancion } from '../cancion.model';
 @Component({
   selector: 'app-buscar',
   templateUrl: './buscar.component.html',
@@ -12,11 +14,15 @@ import { Genero
 })
 export class BuscarComponent implements OnInit {
   private firestore: Firestore = inject(Firestore);
+  
   generos$: Observable<Genero[]>;
 
-  constructor() {
+  resultadoBusqueda$: Observable<Cancion[]>;
+
+  constructor(private firebase: FirebaseService) {
 
     const generosCollection = collection(this.firestore, 'generos');
+    const cancionesCollection = collection(this.firestore, 'canciones');
 
     this.generos$ = collectionData(generosCollection) as Observable<Genero[]>;
 
@@ -30,6 +36,8 @@ export class BuscarComponent implements OnInit {
   }
 
   buscar(evento: any){
+    this.firebase.GETCanciones(evento.target.value);
+
 
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, DoCheck } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Auth, authState , user, User} from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
@@ -35,16 +35,31 @@ export class LoginComponent implements OnInit {
   
   login: boolean = false; 
 
+  //datos login
   usuario: string;
   password: string;
+  //datos registro
+  emailNuevoUsuario: string;
+  passwordNuevoUsuario: string;
+  nombreNuevoUsuario: string;
 
   modo: string;
   paso: number;
 
-  error: string;
+  mensajeUsuario: string;
 
   iniciarSesion(email: string, password: string){
     this.authS.iniciarSesion(email, password);
+  }
+
+  ngDoCheck(){
+    if(this.authS.error){
+      this.mensajeUsuario = this.authS.error;
+    }
+
+    if(this.authS.mensaje){
+      this.mensajeUsuario = this.authS.mensaje;
+    }
   }
   
   esRegistro(){
@@ -59,8 +74,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  crearCuenta(){
-    //this.authS.registro()
+  crearCuenta(correo: string, password:string, nombre: string){
+    this.authS.registro(correo, password, nombre);
   }
   siguientePaso(nuevoPaso : number){
     this.paso = nuevoPaso;

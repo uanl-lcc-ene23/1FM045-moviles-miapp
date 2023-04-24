@@ -2,6 +2,9 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Playlist } from '../playlist.model';
+import { FirebaseService } from '../firebase.service';
+
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-libreria',
@@ -14,7 +17,10 @@ export class LibreriaComponent implements OnInit {
 
   playlists$: Observable<Playlist[]>;
 
-  constructor() { 
+  constructor(
+    private firebase: FirebaseService, 
+    private modal : ModalController
+  ) { 
     const playlistsCollection = collection(this.firestore, 'playlists');
 
     this.playlists$ = collectionData(playlistsCollection) as Observable<Playlist[]>;
@@ -23,10 +29,16 @@ export class LibreriaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  nombrePlaylist: string = '';
+  nombrePlaylist: string;
 
-  crearPlaylist(){
+  crearPlaylist(nombre: string){
+    this.firebase.POSTPlaylist(nombre);
 
+    this.cerrarModal();
+  }
+
+  cerrarModal(){
+    this.modal.dismiss();
   }
 
 }

@@ -55,6 +55,11 @@ const routes: Routes = [ //rutas aqui
     pathMatch: 'full'
   },
   {
+    path: 'registro/landing', //TEMPORAL : Resolver error de ruta desde libreria
+    redirectTo: '/landing',
+    pathMatch: 'full'
+  },
+  {
     path: 'playlist/:id',
     component: PlaylistComponent, 
     canActivate: [AuthGuard]

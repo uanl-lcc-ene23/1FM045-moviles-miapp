@@ -13,7 +13,7 @@
                 <p class="negritas">Crear una nueva playlist</p>
                 <div>
                     <ion-input class="blanco" [(ngModel)]="nombrePlaylist"></ion-input>
-                    <ion-button class="verde" (click)="crearPlaylist()">Crear playlist</ion-button>
+                    <ion-button class="verde" (click)="crearPlaylist(nombrePlaylist)">Crear playlist</ion-button>
                 </div>
             </ion-content>
         </ng-template>
