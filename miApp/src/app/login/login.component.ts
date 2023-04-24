@@ -58,6 +58,10 @@ export class LoginComponent implements OnInit {
       return;
     }
   }
+
+  crearCuenta(){
+    //this.authS.registro()
+  }
   siguientePaso(nuevoPaso : number){
     this.paso = nuevoPaso;
   }

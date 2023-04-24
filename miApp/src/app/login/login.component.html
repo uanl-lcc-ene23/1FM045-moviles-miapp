@@ -2,12 +2,25 @@
     <ion-header>
         <ion-toolbar>
             <ion-title>
-                <ion-label *ngIf="!login">Crear una cuenta</ion-label>
-                <ion-label *ngIf="login">Inicia sesión</ion-label>
+                <div class="caja-flex">
+                    <div *ngIf="(login && paso== 2) || (!login && paso==2) || (login && paso== 3)" class="volver">
+                        <ion-button class="transparente" (click)="regresarPaso(1)">
+                            <ion-icon name="chevron-back-sharp"></ion-icon>
+                            Volver
+                        </ion-button>
+                    </div>
+                    <div class="heading">
+                        <ion-label *ngIf="!login">Crear una cuenta</ion-label>
+                        <ion-label *ngIf="login">Inicia sesión</ion-label>
+                    </div>
+                    
+                    
+                </div>
             </ion-title>
+            
         </ion-toolbar>
     </ion-header>
-
+    
     <form *ngIf="login">
         <ion-grid>
             <ion-row id="paso1" *ngIf="login && paso == 1">
@@ -19,12 +32,7 @@
             </ion-row>
             <ion-row id="paso2" *ngIf="login && paso == 2">
                 <ion-col>
-                    <div>
-                        <ion-button class="transparente" (click)="regresarPaso(1)">
-                            <ion-icon name="chevron-back-sharp"></ion-icon>
-                            Volver
-                        </ion-button>
-                    </div>
+                    
                     <ion-label>¿Cuál es tu contraseña?</ion-label>
                     <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
                     <ion-button class="verde" (click)="iniciarSesion(usuario, password)">Iniciar Sesión</ion-button>
@@ -37,25 +45,25 @@
             </ion-row>
         </ion-grid>
     </form>
-
-
+    
+    
     <form *ngIf="!login">
         <ion-grid>
-            <ion-row id="paso1">
+            <ion-row id="paso1" *ngIf="!login && paso == 1">
                 <ion-col>
                     <ion-label>¿Cuál es tu correo?</ion-label>
                     <ion-input type="text"></ion-input>
                     <ion-button class="verde" (click)="siguientePaso(2)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
-            <ion-row id="paso2">
+            <ion-row id="paso2" *ngIf="!login && paso == 2">
                 <ion-col>
                     <ion-label>Elige tu contraseña</ion-label>
                     <ion-input type="password"></ion-input>
-                    <ion-button class="verde">Siguiente</ion-button>
+                    <ion-button class="verde" (click)="siguientePaso(3)">Siguiente</ion-button>
                 </ion-col>
             </ion-row>
-            <ion-row id="paso3">
+            <ion-row id="paso3" *ngIf="!login && paso == 3">
                 <ion-col>
                     <ion-grid>
                         <ion-row>
@@ -63,21 +71,21 @@
                                 <ion-label>¿Cómo te llamas?</ion-label>
                                 <ion-input type="text"></ion-input>
                             </ion-col>
-            
+                            
                             <div class="divisor"></div>
                             
                         </ion-row>
                         <ion-row>
-                            <div>
+                            <div id="terminosycondiciones">
                                 <p>Acepta los términos y condiciones</p>
                                 <p class="verde">
                                     Términos de Uso
                                 </p>
-                                <div>
+                                <div class="leyenda">
                                     <p>Acepto los términos de uso y políticas de privacidad de mi app de música.</p>
                                     <ion-radio-group value="strawberries">
                                         <ion-radio value="si" labelPlacement="start">Acepto los términos de uso y políticas de privacidad de mi app de música.</ion-radio><br/>
-                                      </ion-radio-group>
+                                    </ion-radio-group>
                                 </div>
                             </div>
                             
@@ -85,7 +93,7 @@
                         <ion-row>
                             <ion-col>
                                 <div>
-                                    <ion-button class="blanco">Crear cuenta</ion-button>
+                                    <ion-button class="blanco" (click)="crearCuenta()">Crear cuenta</ion-button>
                                 </div>
                             </ion-col>
                         </ion-row>

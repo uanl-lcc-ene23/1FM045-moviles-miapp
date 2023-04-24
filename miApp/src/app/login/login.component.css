@@ -26,3 +26,32 @@ form ion-input .helper {
 ion-radio-group, ion-radio-group ion-radio {
     color: #ddd;
 }
+
+.caja-flex {
+    display :flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.caja-flex .heading{
+    flex: 1 0 auto;
+}
+
+#terminosycondiciones {
+    width: 100%;
+}
+
+#terminosycondiciones .leyenda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    #terminosycondiciones {
+        width: 50%;
+    }
+}
