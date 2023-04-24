@@ -23,8 +23,8 @@
         <ion-row>
             <ion-col>
                 <ion-list>
-                    <ion-item>
-                        <ion-label class="italico">Marvin Gaye</ion-label>
+                    <ion-item *ngFor="let playlist of playlists$ | async">
+                        <ion-label class="italico">{{playlist.nombre}}</ion-label>
                     </ion-item>
                 </ion-list>
             </ion-col>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Playlist } from '../playlist.model';
 
 @Component({
   selector: 'app-libreria',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibreriaComponent implements OnInit {
 
-  constructor() { }
+  private firestore: Firestore = inject(Firestore);
+
+  playlists$: Observable<Playlist[]>;
+
+  constructor() { 
+    const playlistsCollection = collection(this.firestore, 'playlists');
+
+    this.playlists$ = collectionData(playlistsCollection) as Observable<Playlist[]>;
+  }
 
   ngOnInit(): void {
   }

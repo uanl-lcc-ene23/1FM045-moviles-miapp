@@ -46,9 +46,9 @@
                 <ion-grid id="grid-playlists">
                     <ion-row>
                         <ion-col>
-                            <ion-list id="listaPlaylists">
+                            <ion-list id="listaPlaylists" *ngFor="let playlist of playlists$ | async">
                                 <ion-item>
-                                    <ion-label class="italico">Mis canciones de Shazam</ion-label>
+                                    <ion-label class="italico">{{playlist.nombre}}</ion-label>
                                 </ion-item>
                             </ion-list>
                         </ion-col>
