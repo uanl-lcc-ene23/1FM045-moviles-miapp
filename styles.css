@@ -1,0 +1,153 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*Estilos globales ayudan a cambiar variables de ionic y definir tus propias globales
+Utiliza este archivo para implementar estilos que se van a repetir a lo largo de tu aplicación
+y no encapsularlos por componente*/
+:root {
+    
+    /*Variables */
+    --verde: #1ED760;
+    --bg-color: #121212;
+    --gris-oscuro: #777777;
+    --gris-claro: #B3B3B3;
+    --blanco: #fff;
+    --negro: #000;
+
+
+    /*Variables de Ionic*/
+    --ion-background-color: var(--bg-color);
+    --ion-color-primary: var(--blanco);
+    
+}
+
+ion-card{
+    --ion-background-color: #FFF;
+}
+
+ion-header ion-toolbar ion-title,
+ion-tabs, 
+ion-tab-bar, ion-tab-bar ion-tab-button{
+    background-color: var(--bg-color);
+    color: var(--ion-color-primary);
+}
+
+ion-tab-bar, ion-tab-bar ion-tab-button ion-icon{
+    color: var(--gris-oscuro);
+}
+
+ion-tab-button:hover ion-label,
+ion-tab-button:hover ion-icon,
+ion-tab-button:focus ion-label,
+ion-tab-button:focus ion-icon{
+    color: var(--verde);
+}
+
+ion-button.verde {
+    --background: var(--verde);
+    --background-hover: #9ce0be;
+    --background-activated: #88f4be;
+    --background-focused: #88f4be;
+    --color: #000;
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+
+ion-button.negro {
+    --background: var(--bg-color);
+    --background-hover: #000;
+    --background-activated: #000;
+    --background-focused: #000;
+    --color: #FFF;
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+
+
+ion-button.blanco {
+    --background: var(--blanco);
+    --background-hover: var(--blanco);
+    --background-activated: var(--blanco);
+    --background-focused: var(--blanco);
+    --color: #000;
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+ion-button.gris {
+    --background: var(--gris-oscuro);
+    --background-hover: var(--negro);
+    --background-activated: var(--negro);
+    --background-focused: var(--blanco);
+    --color: var(--blanco);
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+
+ion-button.transparente {
+    --background: transparent;
+    --background-hover: var(--negro);
+    --background-activated: var(--negro);
+    --background-focused: var(--blanco);
+    --color: var(--blanco);
+    --box-shadow: none;
+    text-transform: capitalize;
+    --border-radius: 50px;
+    height: auto;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 16px;
+}
+
+p, h1, h2, h3, h4, ul, ul li, span{
+    color: var(--blanco)
+}
+
+p.verde, h1.verde, h2.verde, h3.verde, h4.verde, ul.verde, ul li.verde , span.verde{
+    color: var(--verde);
+}
+
+p.gris, h1.gris, h2.gris, h3.gris, h4.gris, ul.gris, ul li.gris , span.gris{
+    color: var(--gris-claro);
+}
+
+
+ion-searchbar, ion-searchbar.blanco {
+    --background: var(--blanco);
+    --color: var(--negro);
+    --box-shadow: none;
+}
+
+.italico {
+    font-style:italic;
+}
+
+.negritas {
+    font-weight: 700;
+}
+
+ion-list ion-item {
+    --color: var(--blanco);
+}
+
+ion-tab-button.highlight ion-icon{
+    color: var(--blanco);
+}
